@@ -1,0 +1,32 @@
+{
+  "name": "boshu-discord-bot",
+  "description": "Default template for JavaScript bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dischanet/boshu-discord-bot.git"
+  },
+  "author": "dischanet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dischanet/boshu-discord-bot/issues"
+  },
+  "homepage": "https://github.com/dischanet/boshu-discord-bot#readme",
+  "scripts": {
+    "start": "node ./index.js",
+    "lint": "eslint --fix --ext .js .",
+    "precommit": "pretty-quick --staged"
+  },
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-config-problems": "^2.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.16.4",
+    "pretty-quick": "^1.10.0"
+  }
+}
