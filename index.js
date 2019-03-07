@@ -93,7 +93,7 @@ async function rec_start(message) {
     channel_id: message.channel.id,
     rec_num: recruit_message[1],
     team_num,
-    admin_name: message.author.name,
+    admin_name: message.author.tag,
     admin_id: message.author.id,
     title
   });
@@ -116,11 +116,10 @@ async function rec_join(message) {
   const recruit_members = _recruit_member.filter(
     member => member.channel_id === message.channel.id
   );
-  const rest = Number(recruit_status.rec_num) - recruit_members.length - 1;
+  const rest = recruit_status.rec_num - recruit_members.length - 1;
   _recruit_member.push({
     channel_id: message.channel.id,
-    member_id: message.author.id,
-    member_name: message.author.name
+    member_id: message.author.id
   });
   if (rest > 0) {
     const head = recruit_status.title ? `"${recruit_status.title}"` : "";
@@ -182,7 +181,7 @@ async function rec_cancel(message) {
   const head = recruit_status.title ? `[${recruit_status.title}]の` : "";
   return client.users
     .get(recruit_status.admin_id)
-    .send(`${head}募集を、${message.author.name}がキャンセルしました。`);
+    .send(`${head}募集を、${message.author}がキャンセルしました。`);
 }
 
 async function rec_finish(message, recruit_status) {
